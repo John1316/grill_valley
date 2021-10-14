@@ -1,0 +1,353 @@
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9">
+                    <div class="form-group">
+                        <h3 class="mb-3">Choose Your Delivery Address:</h3>
+                        <form>
+                            <div class="d-flex mb-3">
+
+
+                                <div class="form-check address-erea mr-3">
+                                    <input class="form-check-input" type="radio" name="type_of_pick" id="delivery"
+                                        onchange="RedirectDelivery()" value="option1">
+                                    <label class="form-check-label" for="delivery">
+                                        <h5>Delivery</h5>
+                                    </label>
+                                </div>
+                                <div class="form-check address-erea mr-3">
+                                    <input class="form-check-input" type="radio" name="type_of_pick" id="pickup"
+                                        onchange="RedirectUp()" value="option1">
+                                    <label class="form-check-label" for="pickup">
+                                        <h5>Pick up</h5>
+                                    </label>
+                                </div>
+                            </div>
+                        </form>
+                        <form action="">
+                            <div class="delivery_section">
+                                <div class="add-area">
+                                    <a class="address-link">
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <div class="form-check address-erea">
+                                                    <input class="form-check-input" type="radio" name="address"
+                                                        id="prevAddressbtn1" onchange="RedirectprevAddress()"
+                                                        value="option1">
+                                                    <label class="form-check-label" for="prevAddressbtn1">
+                                                        <h5>Mohandseen</h5>
+                                                        <span>10 Aswan Square, No.501, floor 4, flat 403</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-check address-erea">
+                                                    <input class="form-check-input" type="radio" name="address"
+                                                        id="prevAddressbtn2" onchange="RedirectprevAddress()"
+                                                        value="option2">
+                                                    <label class="form-check-label" for="prevAddressbtn2">
+                                                        <h5>Dokki</h5>
+                                                        <span>15 Soliman Gohar St., floor 3, flat 6</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="form-check address-erea">
+                                                    <input class="form-check-input" type="radio" name="address"
+                                                        id="prevAddressbtn3" onchange="RedirectprevAddress()"
+                                                        value="option3">
+                                                    <label class="form-check-label" for="prevAddressbtn3">
+                                                        <h5>Zamalek</h5>
+                                                        <span>15 Soliman Gohar St., floor 3, flat 6</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col-md-6 check-btn">
+                                        <a href="checkout.html" class="btn btn-style1 btn-block">
+                                            <span>
+
+                                                Proceed Checkout
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="add-area">
+                                    <a class="address-link">
+
+                                        <label for="addAddressbtn">
+                                        </label>
+                                        <i class="icon-plus"></i>
+                                        <span class="sp-link-title">Add a new address</span>
+                                        <input class="form-check-input" type="radio" name="address" value="option4"
+                                            id="addAddressbtn" onchange="RedirectaddAddress()">
+
+                                    </a>
+
+
+                                </div>
+                                <div class="col-md-12" id="addAddress">
+                                    <div id="addNewAddressForm">
+                                        <form id="addAddressForm"
+                                            action=""
+                                            method="POST">
+                                            
+                                            <div class="address-box">
+
+                                                <div class="form-group form-control-validation">
+                                                    <label for="">Location</label>
+                                                    <div class="select_wrap dark_slect">
+                                                        <select class="form-control" name="location_id" id="location_id">
+                                                            <option value="">Choose your location</option>
+                                                            <option value="29">Mohandsien</option>
+                                                            <option value="30">Heliopolis</option>
+                                                            <option value="31">El Sheikh Zayed</option>
+                                                        </select>
+                                                        <small>Error message</small>
+
+                                                    </div>
+                                                </div>
+                                                <div class="form-group form-control-validation">
+                                                    <label for="">Sub Location</label>
+                                                    <div class="select_wrap dark_slect">
+                                                        <div id="ajaxSelectLoader" style="display: none">
+                                                            <div class="select-lds-dual-ring"></div>
+                                                        </div>
+                                                        <select class="form-control" name="sub_location_id"
+                                                            id="sub_location_id" style="display: flex">
+                                                            <option value="">Choose Location First</option>
+                                                        </select>
+                                                        <small>Error message</small>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="form-group form-control-validation">
+                                                    <label for="">Type of building</label>
+                                                    <div class="select_wrap dark_slect">
+                                                        <select class="form-control" id="address_type"
+                                                            name="address_type">
+                                                            <option value="">Choose building</option>
+                                                            <option value="building">building</option>
+                                                            <option value="villa">villa</option>
+                                                            <option value="other">other</option>
+                                                        </select>
+                                                        <small>Error message</small>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row" style="display: none;" id="building">
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="Address">Address</label>
+                                                            <input placeholder="Address" class="form-control"
+                                                                id="building_address" type="text">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="no_of_building">Building Number</label>
+                                                            <input type="number" placeholder="Enter Building Number"
+                                                                onkeypress="isInputNumber(event)" class="form-control"
+                                                                id="building_no_of_building">
+                                                            <small>Error message</small>
+
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="no_of_apartment">Appartment Number</label>
+                                                            <input type="number" placeholder="Enter Appartment Number"
+                                                                onkeypress="isInputNumber(event)" class="form-control"
+                                                                id="building_no_of_apartment">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="no_of_apartment">Floor Number</label>
+                                                            <input type="number" placeholder="Enter Floor Number"
+                                                                onkeypress="isInputNumber(event)" class="form-control"
+                                                                id="building_no_of_floor">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="Landmark">Landmark</label>
+                                                            <input placeholder="Enter Landmark" class="form-control"
+                                                                id="building_landmark" type="text">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row" style="display: none;" id="villa">
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="Address">Address</label>
+                                                            <input placeholder="Address" class="form-control"
+                                                                id="villa_address" type="text">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="no_of_building">Building Number</label>
+                                                            <input type="number" placeholder="Enter Building Number"
+                                                                onkeypress="isInputNumber(event)" class="form-control"
+                                                                id="villa_no_of_building">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="Landmark">Landmark</label>
+                                                            <input placeholder="Enter Landmark" class="form-control"
+                                                                id="villa_landmark" type="text">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="row" style="display: none;" id="other">
+
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="Address">Address</label>
+                                                            <input placeholder="Address" class="form-control"
+                                                                id="other_address" type="text">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12">
+                                                        <div class="form-group form-control-validation">
+
+                                                            <label for="Landmark">Landmark</label>
+                                                            <input placeholder="Enter Landmark" class="form-control"
+                                                                id="other_landmark" type="text">
+                                                            <small>Error message</small>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <button type="submit" class="btn btn-style1 ">
+                                                    <span>
+                                                        Save Address
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                                <!-- <div class="col-md-12 d-none" id="addAddress">
+                                        <div class="row">
+                                            <div class="col-12 my-3">
+                                                <label for="">Area</label>
+                                                <select class="select_option form-control" name="area" id="area"> 
+                                                    <option value="">Choose Area</option>
+                                                    <option value="">6th of October</option>
+                                                    <option value="">Agouza</option>
+                                                    <option value="">Dokki</option>
+                                                    <option value="">Downtown</option>
+                                                    <option value="">Garden City</option>
+                                                    <option value="">Haram</option>
+                                                    <option value="">Heliopolis</option>
+                                                    <option value="">Maadi</option>
+                                                    <option value="">Mohandseen</option>
+                                                    <option value="">New Cairo</option>
+                                                    <option value="">Zamalek</option>
+            
+                                                </select>
+                                            </div>
+                                            <div class="col-12">
+                                                <label for="">Address</label>
+                                                <input type="text" name="address" id="address" class=" form-control" placeholder="">
+                                            </div>
+                                            <div class="col-12">
+                                                <a href="checkout.html" type="submit" class="btn btn-style1 my-3 w-100">
+                                                    <span>
+                                                    Save Address
+                                                    </span>
+                                                </a> 
+                                            </div>
+                                        </div>
+                                    </div> 
+                            </div>
+                            <div class="pickup_section ">
+                                <div class="row">
+
+                                    <div class="col-12 mb-3">
+                                        <label for="mobilepickup">Mobile</label>
+                                        <input type="text" name="mobilepickup" id="mobilepickup" class=" form-control"
+                                            placeholder="">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="pickupaddress">Address</label>
+                                        <input type="text" name="pickupaddress" id="pickupaddress" class=" form-control"
+                                            placeholder="Pick up address">
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <label for="pickuptime">Pick up time</label>
+                                        <select class="select_option form-control" name="pickuptime" id="pickuptime">
+                                            <option value="">Choose Time</option>
+                                            <option value="30">30 Minutes</option>
+                                            <option value="60">60 Minutes</option>
+                                            <option value="90">90 Minutes</option>
+                                            <option value="120">120 Minutes</option>
+                                            <option value="180">180 Minutes</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <a href="checkout.html" type="submit" class="btn btn-style1 my-3 w-100">
+                                            <span>
+
+                                                Submit
+                                            </span>
+
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>

@@ -82,29 +82,58 @@
                                 <!-- header icon start -->
                                 <div class="header-element right-block-box">
                                     <ul class="shop-element">
+                                        <div class="megamenu-content">
+                                            <div class="mainwrap">
+                                                <ul class="main-menu">
+                                                    
+                                                    <li class="side-wrap user-wrap">
+                                                        <ul class="list-unstyled">
+                                                            <li class="menu-link parent ">
+                                                                <div class="acc-desk">
+
+                                                                    <div class="user-icon mr-2">
+                                                                        <a class="user-icon-desk">
+                                                                            <span class="background"><i class="icon-user"></i></span>
+                                                                        </a>
+                                                                    </div>
+                                                                    <a class="link-title">
+                                                                        <span class="sp-link-title">Hamed</span>
+                                                                    </a>
+                                                                    <a href="#collapse-home" data-bs-toggle="collapse" class="link-title link-title-lg">
+                                                                        <span class="sp-link-title">Mohamed hamed</span>
+                                                                        <i class="fa fa-angle-down"></i>
+                                                                    </a>
+                                                                    <ul class="dropdown-submenu sub-menu collapse" id="collapse-home">
+                                                                        <li class="submenu-li">
+                                                                            <a href="profile.html" class="submenu-link">profile</a>
+                                                                        </li>
+                                                                        <li class="submenu-li">
+                                                                            <a href="#" class="submenu-link">Admin Dashboard</a>
+                                                                        </li>
+                                                                        <li class="submenu-li">
+                                                                            <a href="tracking.html" class="submenu-link">Track order</a>
+                                                                        </li>
+                                                                        <li class="submenu-li">
+                                                                            <a href="previous-order.html" class="submenu-link">Previous order</a>
+                                                                        </li>
+                                                                        <li class="submenu-li">
+                                                                            <a href="index.html" class="submenu-link">Logout</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                                <div class="acc-mob">
+                                                                    <a href="account.html" class="user-icon">
+                                                                        <span><i class="icon-user"></i></span>
+                                                                    </a>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    
+                                                </ul>
+                                            </div>
+                                        </div>
                                         
                                         
-                                        <li class="side-wrap user-wrap">
-                                            <div class="acc-desk">
-                                                <div class="user-icon">
-                                                    <a class="user-icon-desk">
-                                                        <span class="background"><i class="icon-user"></i></span>
-                                                    </a>
-                                                </div>
-                                                <div class="user-info">
-                                                    <span class="acc-title">Mohamed hamed</span>
-                                                    <div class="account-login">
-                                                        <a href="profile.html">Profile</a>
-                                                        <a href="index.html">Logout</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="acc-mob">
-                                                <a href="account.html" class="user-icon">
-                                                    <span><i class="icon-user"></i></span>
-                                                </a>
-                                            </div>
-                                        </li>
                                         <li class="side-wrap cart-wrap">
                                             <div class="shopping-widget">
                                                 <div class="shopping-cart">
@@ -158,7 +187,12 @@
                             <div class="cart-pro-info">
                                 <div class="cart-qty-price">
                                     <span class="quantity">1 x </span>
-                                    <span class="price-box">140 LE
+                                    <span class="price-box">140 LE </span>
+                                </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
                                     </span>
                                 </div>
                                 <div class="delete-item-cart">
@@ -182,6 +216,12 @@
                                     <span class="price-box">15 LE
                                     </span>
                                 </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
+                                </div>
                                 <div class="delete-item-cart">
                                     <a href="empty-cart.html"><i class="icon-trash icons"></i></a>
                                 </div>
@@ -201,6 +241,12 @@
                                 <div class="cart-qty-price">
                                     <span class="quantity">1 x </span>
                                     <span class="price-box">220 LE</span>
+                                </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
                                 </div>
                                 <div class="delete-item-cart">
                                     <a href="empty-cart.html"><i class="icon-trash icons"></i></a>
@@ -330,14 +376,179 @@
                                     </div>
                                 </div>
                                 <div class="order-his-page">
-                                    <ul class="profile-ul">
-                                        <!-- <li class="profile-li"><a href="order-history.html"><span>Orders</span> <span class="pro-count">5</span></a></li> -->
-                                        <li class="profile-li"><a href="profile.html" class="active">Profile</a></li>
+                                    <ul class="nav nav-tabs row">
+                                        <li class="nav-item col-12">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#tab-1">Change Image</a>
+                                        </li>
+                                        <li class="nav-item col-12">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Profile</a>
+                                        </li>
+                                        <li class="nav-item col-12">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Passwords</a>
+                                        </li>
+                                        <li class="nav-item col-12">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Saved Addressess</a>
+                                        </li>
+                                        <li class="nav-item col-12">
+                                            <a class="nav-link" data-bs-toggle="tab" href="index.html">Logout</a>
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
                             <div class="profile-form col-md-8">
-                                <form>
+                                    
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="tab-1">
+                                        <!-- Loop start here -->
+                                        <div class="order-pro">
+                                            
+                                            <form id="imageForm" action="" method="post">
+                                                <div class="row">
+                                                    <div class="col-lg-8">
+
+                                                        <div class="form-group form-control-validation">
+                                                            <label for="image">Choose file to upload</label>
+                                                            <input class="form-control" type="file" id="image" name="image">
+                                                            <small>Error message</small>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-4">
+
+                                                        <button onclick="imageUpload()" class="btn w-100 btn-style1">
+                                                            <span>
+                                                                Upload
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <!-- Loop end here -->
+                                    </div>
+                                    <div class="tab-pane" id="tab-2">
+                                        <form id="profileForm" action="" method="get">
+                                            <div class="form-row row">
+                                                <div class="form-group form-control-validation  col-lg-6">
+                                                    <input class="form-control" type="text" id="full_name" name="full_name" placeholder="Full Name">
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="form-group  form-control-validation col-lg-6">
+                                                    <input class="form-control" type="email" id="email" name="email" placeholder="Email address">
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="form-group form-control-validation col-lg-6">
+                                                    <input class="form-control" type="number" id="phone" name="phone" min="1" placeholder="Phone Number">
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="form-group form-control-validation  col-lg-6">
+                                                    <input class="form-control" type="text" id="address" name="address" placeholder="Address">
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="form-group form-control-validation  col-lg-6">
+                                                    <select class="form-control"  id="location_id" name="location_id">
+                                                        <option value="">Select Location</option>
+                                                        <option value="">1</option>
+                                                        <option value="">2</option>
+                                                        <option value="">3</option>
+                                                    </select>
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button onclick="profileForm()" class="btn btn-style1 w-auto mt-0   ">
+                                                        <span>
+                                                            Update Information
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="tab-3">
+                                        <form id="passwordForm" action="" method="get">
+                                            <div class="form-row row">
+                                                
+                                                <div class="form-group form-control-validation  col-lg-6">
+                                                    <input class="form-control" type="password" id="password" name="password" placeholder="Password">
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="form-group form-control-validation  col-lg-6">
+                                                    <input class="form-control" type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
+                                                    
+                                                    <small>Error message</small>
+                                                </div>
+                                                <div class="col-12">
+                                                    <button onclick="passwordForm()" class="btn btn-style1 w-auto mt-0  ">
+                                                        <span>
+                                                        Update Password
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="tab-pane" id="tab-4">
+                                        <div class="form-row row">
+                                            <div class="col-lg-6">
+                                                <form id="" action="" method="get">
+                                                    <div class="card shadow-4">
+                                                        <div class="card-body">
+                                                            <h4 class="mb-3">Address</h4>
+                                                            <div class="form-group form-control-validation">
+                                                                <select type="text" name="address" class="w-100" placeholder="Address" required>
+                                                                    <option value="">Area</option>
+                                                                    <option value="">Mohandsen</option>
+                                                                    <option value="">giza</option>
+                                                                </select>
+                                                                <small>Error message</small>
+                                                            </div>
+                                                            <div class="form-group form-control-validation">
+                                                                <input type="text" name="address" class="w-100" placeholder="Address" required>
+                                                                
+                                                                <small>Error message</small>
+                                                            </div>
+                                                            
+                                                            <button class="btn btn-style1 w-auto mt-0">
+                                                                <span>
+                                                                Update Address
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <form action="">
+                                                    <div class="card shadow-4">
+                                                        <div class="card-body">
+                                                            <h4 class="mb-3">Address</h4>
+                                                            <div class="form-group form-control-validation">
+                                                                <select type="text" name="address" class="w-100" placeholder="Address" required>
+                                                                    <option value="">Area</option>
+                                                                    <option value="">Mohandsen</option>
+                                                                    <option value="">giza</option>
+                                                                </select>
+                                                                <small>Error message</small>
+                                                            </div>
+                                                            <div class="form-group form-control-validation">
+                                                                <input type="text" name="address" class="w-100" placeholder="Address" required>
+                                                                
+                                                                <small>Error message</small>
+                                                            </div>
+                                                            
+                                                            <button onclick="passwordForm()" class="btn btn-style1 w-auto mt-0  ">
+                                                                <span>
+                                                                Update Address
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- <form>
                                     <ul class="pro-input-label ">
                                         <li class="w-100">
                                             <input type="text" name="full_name" class="w-100" placeholder="Full name" required>
@@ -352,14 +563,7 @@
                                             <input type="text" name="name" placeholder="Phone number">
                                         </li>
                                     </ul>
-                                    <ul class="pro-input-label">
-                                        <li>
-                                            <input type="text" name="name" placeholder="New password">
-                                        </li>
-                                        <li>
-                                            <input type="text" name="name" placeholder="Confirm password">
-                                        </li>
-                                    </ul>
+                                    
                                     <ul class="pro-submit">
                                         
                                         <li>
@@ -371,14 +575,14 @@
                                             </button>
                                         </li>
                                     </ul>
-                                </form>
-                            </div>
+                                </form> -->
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <!-- order history end -->
+        
         <!-- start footer -->
         <footer class="section-b-space light-layout">
             <div class="container">
@@ -455,19 +659,217 @@
         <!-- jquery -->
         <script src="js/modernizr-2.8.3.min.js"></script>
         <script src="js/jquery-3.6.0.min.js"></script>
-        <!-- bootstrap -->
-        <script src="js/bootstrap.min.js"></script>
         <!-- popper -->
         <script src="js/popper.min.js"></script>
+        <!-- bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
         <!-- fontawesome -->
         <script src="js/fontawesome.min.js"></script>
         <!-- owl carousal -->
         <script src="js/owl.carousel.min.js"></script>
         <!-- slick -->
+        <script src="js/wow.min.js"></script>
         <!-- swiper -->
         <script src="js/swiper.min.js"></script>
         <!-- custom -->
         <script src="js/custom.js"></script>
+        <script>
+                passwordForm();
+                profileForm();
+                imageUpload();
+                function passwordForm(){
+
+                    let passwordForm = document.getElementById('passwordForm');
+                    let password = document.getElementById('password');
+                    let confirmPassword = document.getElementById('password_confirmation');
+
+
+
+                    let formErrors = [];
+
+                    passwordForm.addEventListener('submit', e => {
+                        checkInputs();
+                        if (formErrors.length) {
+                            e.preventDefault();
+                        }
+                    });
+
+                    function checkInputs() {
+                        formErrors = [];
+                        // trim to remove the whitespaces
+
+
+                        let passwordValue = password.value.trim();
+                        let confirmPasswordValue = confirmPassword.value.trim();
+
+
+                        if (passwordValue === '') {
+                            formErrors.push('Password is required');
+                            setErrorFor(password, 'Password is required');
+                        } else if (passwordValue.length < 8) {
+                            formErrors.push('Password cannot be less than 8');
+                            setErrorFor(password, 'Password cannot be less than 8');
+                        } else {
+                            setSuccessFor(password);
+                        }
+                        if (confirmPasswordValue === '') {
+                            formErrors.push('Password confirmation is required');
+                            setErrorFor(confirmPassword, 'Password confirmation is required');
+                        } else if (passwordValue !== confirmPasswordValue) {
+                            formErrors.push("Password don't match");
+                            setErrorFor(confirmPassword, "Password don't match");
+                        } else {
+                            setSuccessFor(confirmPassword);
+                        }
+                    }
+
+                    function setErrorFor(input, message) {
+                        let formControl = input.parentElement;
+                        let small = formControl.querySelector('small');
+                        formControl.className = 'form-group form-control-validation error col-lg-6';
+                        small.innerText = message;
+                    }
+
+                    function setSuccessFor(input) {
+                        let formControl = input.parentElement;
+                        formControl.className = 'form-group  form-control-validation success col-lg-6';
+                    }
+                }
+                function profileForm(){
+                    let profileForm = document.getElementById('profileForm');
+                    let fullName = document.getElementById('full_name');
+                    let phone = document.getElementById('phone');
+                    let locationId = document.getElementById('location_id');
+                    let address = document.getElementById('address');
+                    let email = document.getElementById('email');
+
+
+
+
+                    let formErrors = [];
+
+                    profileForm.addEventListener('submit', e => {
+                        checkInputs();
+                        if (formErrors.length) {
+                            e.preventDefault();
+                        }
+                    });
+
+                    function checkInputs() {
+                        formErrors = [];
+                        // trim to remove the whitespaces
+
+                        let fullNameValue = fullName.value.trim();
+                        let phoneValue = phone.value.trim();
+                        let addressValue = address.value.trim();
+                        let locationValue = locationId.value.trim();
+                        let emailValue = email.value.trim();
+
+
+
+
+                        if (fullNameValue === '') {
+                            formErrors.push('Full Name is required');
+                            setErrorFor(fullName, 'Full Name is required');
+                        } else {
+                            setSuccessFor(fullName);
+                        }
+                        if (phoneValue === '') {
+                            formErrors.push('Phone is required');
+                            setErrorFor(phone, 'Phone is required');
+                        } else {
+                            setSuccessFor(phone);
+                        }
+                        if (addressValue === '') {
+                            formErrors.push('Address is required');
+                            setErrorFor(address, 'Address is required');
+                        } else {
+                            setSuccessFor(address);
+                        }
+                        if (locationValue === '') {
+                            formErrors.push('Location is required');
+                            setErrorFor(locationId, 'Location is required');
+                        } else {
+                            setSuccessFor(locationId);
+                        }
+
+
+
+                        if (emailValue === '') {
+                            formErrors.push('Email is required');
+                            setErrorFor(email, 'Email is required');
+                        } else if (!isEmail(emailValue)) {
+                            formErrors.push('Email is invalid');
+                            setErrorFor(email, 'Email is invalid');
+                        } else {
+                            setSuccessFor(email);
+                        }
+
+                    }
+
+                    function setErrorFor(input, message) {
+                        let formControl = input.parentElement;
+                        let small = formControl.querySelector('small');
+                        formControl.className = 'form-group form-control-validation error col-lg-6';
+                        small.innerText = message;
+                    }
+
+                    function setSuccessFor(input) {
+                        let formControl = input.parentElement;
+                        formControl.className = 'form-group  form-control-validation success col-lg-6';
+                    }
+
+                    function isEmail(email) {
+                        return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+                    }
+                }
+                function imageUpload(){
+                    let imageForm = document.getElementById('imageForm');
+                    let image = document.getElementById('image');
+
+                    let formErrors = [];
+
+                    imageForm.addEventListener('submit', e => {
+                        checkInputs();
+                        if (formErrors.length) {
+                            e.preventDefault();
+                        }
+                    });
+
+                    function checkInputs() {
+                        formErrors = [];
+                        // trim to remove the whitespaces
+
+                        let imageValue = image.value.trim();
+
+
+
+
+
+                        if (imageValue === '') {
+                            formErrors.push('Image is required');
+                            setErrorFor(image, 'Image is required');
+                        } else {
+                            setSuccessFor(image);
+                        }
+                        
+
+                    }
+
+                    function setErrorFor(input, message) {
+                        let formControl = input.parentElement;
+                        let small = formControl.querySelector('small');
+                        formControl.className = 'form-group form-control-validation error';
+                        small.innerText = message;
+                    }
+
+                    function setSuccessFor(input) {
+                        let formControl = input.parentElement;
+                        formControl.className = 'form-group  form-control-validation success';
+                    }
+
+                }
+        </script>
     </body>
 
 <!-- Mirrored from spacingtech.com/html/vegist-final/vegist/profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Sep 2021 09:13:31 GMT -->

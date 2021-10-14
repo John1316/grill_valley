@@ -1055,7 +1055,7 @@ button.navbar-toggler span.line::after {
 .megamenu-content .mainwrap ul.main-menu li.menu-link a.link-title {
     position: relative;
     color: #000;
-    padding: 15px 30px 15px 0px;
+    padding:30px 15px;
     font-size: 15px;
     display: block;
     display: flex;
@@ -1144,7 +1144,7 @@ button.navbar-toggler span.line::after {
 
 .megamenu-content .mainwrap ul.main-menu li.menu-link ul.dropdown-submenu.sub-menu {
     left: auto;
-    min-width: 150px;
+    min-width: 200px;
 }
 
 .megamenu-content .mainwrap ul.main-menu li.menu-link ul.dropdown-submenu.mega-menu {
@@ -2696,6 +2696,55 @@ button.navbar-toggler span.line::after {
 
 .quick-view .modal .modal-dialog .modal-content .quick-veiw-area .quick-caption .plus-minus a.quick-cart:hover,
 .quick-view .modal .modal-dialog .modal-content .quick-veiw-area .quick-caption .plus-minus a.quick-wishlist:hover {
+    color: #4e0000;
+    background-color: transparent;
+}
+
+.plus-minus {
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.plus-minus span {
+    display: flex;
+    border: 1px solid #eee;
+}
+
+.plus-minus span a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.plus-minus span input {
+    width: 50px;
+    height: 30px;
+    padding: 0px;
+    text-align: center;
+    border-top: none;
+    border-bottom: none;
+}
+
+ a.quick-cart,
+ a.quick-wishlist {
+    width: 40px;
+    height: 40px;
+    background-color: #4e0000;
+    color: #fff;
+    font-size: 16px;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #4e0000;
+    border-radius: 100%;
+}
+
+ a.quick-cart:hover,
+ a.quick-wishlist:hover {
     color: #4e0000;
     background-color: transparent;
 }

@@ -42,6 +42,14 @@ $(".addToCartIcon").on('click', function(){
     $(".mini-cart").addClass("show");
     $(".mm-fullscreen-bg").addClass("active");
     $("body").addClass("hidden");
+
+    
+});
+$(".quick-view .addToCartIcon").on('click', function(){
+    $(".mini-cart").addClass("show");
+    $(".mm-fullscreen-bg").addClass("active");
+
+    $('.quick-view .modal').modal('hide');
 });
 
 $(".shopping-cart-close").on('click', function(){
@@ -1768,9 +1776,9 @@ jQuery(function ($) {
     });
 
 
-    $('.pro-page .nav-item .nav-link').on( "click", function() {
+    $('.nav-item .nav-link').on( "click", function() {
 
-        $('.pro-page .nav-item .nav-link').removeClass('active');
+        $('.nav-item .nav-link').removeClass('active');
         $(this).addClass('active');
 
     });
@@ -2036,12 +2044,336 @@ function zoom(e){
         $(".mm-fullscreen-bg").removeClass("active");
         
     });
-    function RedirectaddAddress(){
-        $("#prevAddress").addClass("d-none"); 
-        $("#addAddress").removeClass("d-none");  
-        $("#prevAddressbtn").prop("checked",false);
+    
+    // function RedirectaddAddress(){
+    //     $("#prevAddress").addClass("d-none"); 
+    //     $("#addAddress").removeClass("d-none");  
+    //     $("#prevAddressbtn").prop("checked",false);
+    // }
+    // function RedirectprevAddress(){
+    //     $("#addAddress").addClass("d-none");  
+    //     $("#addAddressbtn").prop("checked",false);
+    // }
+    // function RedirectDelivery(){
+    //     $(".pickup_section").addClass("d-none"); 
+    //     $(".delivery_section").removeClass("d-none");  
+    //     $(".pickup").prop("checked",false);
+    // }
+    // function RedirectUp(){
+    //     $(".delivery_section").addClass("d-none"); 
+    //     $(".pickup_section").removeClass("d-none");  
+    //     $(".delivery").prop("checked",false);
+    // }
+    // function RedirectprevAddress(){
+    //     $(".pickup_section").addClass("d-none");  
+    //     $(".pickup").prop("checked",false);
+    // }
+    // $(document).ready(function(){
+    //     $(".pickup_section").addClass("d-none");
+    //     $(".delivery_section").addClass("d-none"); 
+    // });
+    const addAddressForm = document.getElementById('addAddressForm');
+    const ChoosenBuilding = document.getElementById('address_type');
+    const locate = document.getElementById('location');
+    const subLocation = document.getElementById('sub_location');
+
+
+    var formErrors = [];
+
+    addAddressForm.addEventListener('submit', e => {
+        checkInputs();
+        if(formErrors.length) {
+            e.preventDefault();
+        }
+    });
+
+    function checkInputs() 
+    {
+        formErrors = [];
+        // trim to remove the whitespaces
+        const locateValue = locate.value.trim();
+        const subLocationValue = subLocation.value.trim();
+        const ChoosenBuildingValue = ChoosenBuilding.value.trim();
+
+
+        if(locateValue === '') {
+            formErrors.push('Location is required');
+            setErrorFor(locate, 'Location is required');
+        } else {
+            setSuccessFor(locate);
+        }
+        if(subLocationValue === '') {
+            formErrors.push('Sub location is required');
+            setErrorFor(subLocation, 'Sub location is required');
+        } else {
+            setSuccessFor(subLocation);
+        }
+        if(ChoosenBuildingValue === '') {
+            formErrors.push('Type of building is required');
+            setErrorFor(ChoosenBuilding, 'Type of building is required');
+        } else {
+            setSuccessFor(ChoosenBuilding);
+        }
+        
+
+        
+        
+        
     }
-    function RedirectprevAddress(){
-        $("#addAddress").addClass("d-none");  
-        $("#addAddressbtn").prop("checked",false);
+    
+    function setErrorFor(input, message) {
+        const formControl = input.parentElement.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'form-group form-control-validation error';
+        small.innerText = message;
+    }
+    
+    function setSuccessFor(input) {
+        const formControl = input.parentElement.parentElement;
+        formControl.className = 'form-group  form-control-validation success';
+    }
+    $(document).ready(function () {    
+        $("#methodOfDelivery").change(function () {
+            var val = $(this).val();
+    
+            if (val == "delivery") {
+                $("#deliveryDiv").removeClass("d-none");
+                $("#pickupDiv").addClass("d-none");
+            }
+            else if (val == "pickup") {
+                $("#pickupDiv").removeClass("d-none");
+                $("#deliveryDiv").addClass("d-none");
+            }else{
+                $("#pickupDiv").addClass("d-none");
+                $("#deliveryDiv").addClass("d-none");
+            }
+        })
+      let addAddressForm = document.getElementById("addAddressForm");       
+      $("#address_type").change(function () {
+        var val = $(this).val();
+        if (val == "villa") {
+          $("#villa").css("display","flex");
+          $("#building").css("display","none");
+          $("#other").css("display","none");
+          $("#address_type option").attr("disabled","disabled");
+          $("#address_type option:selected").removeAttr("disabled");
+          let address = document.getElementById("villa_address");
+          let numberOfBuilding = document.getElementById("villa_no_of_building");
+          let landmark = document.getElementById("villa_landmark");
+          
+          $("#villa_address").attr("name","address");
+          $("#villa_no_of_building").attr("name","building_number");
+          $("#villa_landmark").attr("name","landmark");
+  
+          
+          var formErrors = [];
+              
+          addAddressForm.addEventListener('submit', e => {
+              checkInputs();
+              if(formErrors.length) {
+                  e.preventDefault();
+              }
+          });
+    
+    
+          function checkInputs() {
+              formErrors = [];
+              
+              let addressValue = address.value.trim();
+              let landmarkValue = landmark.value.trim();
+              let numberOfBuildingAddress = numberOfBuilding.value.trim();
+    
+                              
+              
+              
+              if (addressValue === "") {
+                  formErrors.push("Address is required");
+                  setErrorFor(address, "Address is required");
+              } else {
+                  setSuccessFor(address);
+              }
+              if (landmarkValue === "") {
+                  formErrors.push("Landmark is required");
+                  setErrorFor(landmark, "Landmark is required");
+              } else {
+                  setSuccessFor(landmark);
+              }
+              if (numberOfBuildingAddress === "") {
+                  formErrors.push("number Of Building is required");
+                  setErrorFor(numberOfBuilding, "Number of building is required");
+              } else {
+                  setSuccessFor(numberOfBuilding);
+              }
+    
+              
+          }
+    
+          function setErrorFor(input, message) {
+              const formControl = input.parentElement;
+              const small = formControl.querySelector('small');
+              formControl.className = 'form-group form-control-validation error';
+              small.innerText = message;
+          }
+    
+          function setSuccessFor(input) {
+              const formControl = input.parentElement;
+              formControl.className = 'form-group  form-control-validation success';
+          }
+        }
+        else if (val == "building") {
+          $("#villa").css("display","none");
+          $("#building").css("display","flex");
+          $("#other").css("display","none");
+          $("#building_address").attr("name","address");
+          $("#building_no_of_building").attr("name","building_number");
+          $("#building_landmark").attr("name","landmark");
+          $("#building_no_of_apartment").attr("name","apartment_number");
+          $("#building_no_of_floor").attr("name","floor_number");
+          $("#address_type option").attr("disabled","disabled");
+          $("#address_type option:selected").removeAttr("disabled");
+          let address = document.getElementById("building_address");
+          let landmark = document.getElementById("building_landmark");
+          let numberOfBuilding = document.getElementById("building_no_of_building");
+          let numberOfApartment = document.getElementById("building_no_of_apartment");
+          let numberOfFloor = document.getElementById("building_no_of_floor");
+          
+          var formErrors = [];
+              
+          addAddressForm.addEventListener('submit', e => {
+              checkInputs();
+              if(formErrors.length) {
+                  e.preventDefault();
+              }
+          });
+    
+    
+          function checkInputs() {
+              formErrors = [];
+              
+              let addressValue = address.value.trim();
+              let landmarkValue = landmark.value.trim();
+              let numberOfBuildingValue = numberOfBuilding.value.trim();
+              let numberOfApartmentValue = numberOfApartment.value.trim();
+              let numberOfFloorValue = numberOfFloor.value.trim();
+    
+              if (addressValue === "") {
+                  formErrors.push("Address is required");
+                  setErrorFor(address, "Address is required");
+              } else {
+                  setSuccessFor(address);
+              }
+              if (landmarkValue === "") {
+                  formErrors.push("Landmark is required");
+                  setErrorFor(landmark, "Landmark is required");
+              } else {
+                  setSuccessFor(landmark);
+              }
+              if (numberOfBuildingValue === "") {
+                  formErrors.push("number Of Building is required");
+                  setErrorFor(numberOfBuilding, "Number of building is required");
+              } else {
+                  setSuccessFor(numberOfBuilding);
+              }
+              if (numberOfApartmentValue === "") {
+                  formErrors.push("Number Of Apartment is required");
+                  setErrorFor(numberOfApartment, "Number of Apartment is required");
+              } else {
+                  setSuccessFor(numberOfApartment);
+              }
+              if (numberOfFloorValue === "") {
+                  formErrors.push("number Of Floor is required");
+                  setErrorFor(numberOfFloor, "Number of Floor is required");
+              } else {
+                  setSuccessFor(numberOfFloor);
+              }
+    
+              
+          }
+    
+          function setErrorFor(input, message) {
+              const formControl = input.parentElement;
+              const small = formControl.querySelector('small');
+              formControl.className = 'form-group form-control-validation error';
+              small.innerText = message;
+          }
+    
+          function setSuccessFor(input) {
+              const formControl = input.parentElement;
+              formControl.className = 'form-group  form-control-validation success';
+          }
+        }
+        else if (val == "other") {
+          $("#villa").css("display","none");
+          $("#building").css("display","none");
+          $("#other").css("display","flex ");
+          $("#address_type option").attr("disabled","disabled");
+          $("#address_type option:selected").removeAttr("disabled");
+          $("#other_address").attr("name","address");
+          $("#other_landmark").attr("name","landmark");
+          let address = document.getElementById("other_address");
+          let landmark = document.getElementById("other_landmark");
+    
+    
+          
+          var formErrors = [];
+              
+          addAddressForm.addEventListener('submit', e => {
+              checkInputs();
+              if(formErrors.length) {
+                  e.preventDefault();
+              }
+          });
+    
+    
+          function checkInputs() {
+              formErrors = [];
+              
+              let addressValue = address.value.trim();
+              let landmarkValue = landmark.value.trim();
+    
+    
+              if (addressValue === "") {
+                  formErrors.push("Address is required");
+                  setErrorFor(address, "Address is required");
+              } else {
+                  setSuccessFor(address);
+              }
+              if (landmarkValue === "") {
+                  formErrors.push("Landmark is required");
+                  setErrorFor(landmark, "Landmark is required");
+              } else {
+                  setSuccessFor(landmark);
+              }
+    
+              
+          }
+    
+          function setErrorFor(input, message) {
+              const formControl = input.parentElement;
+              const small = formControl.querySelector('small');
+              formControl.className = 'form-group form-control-validation error';
+              small.innerText = message;
+          }
+    
+          function setSuccessFor(input) {
+              const formControl = input.parentElement;
+              formControl.className = 'form-group  form-control-validation success';
+          }
+    
+        }
+        else{
+          $("#villa").css("display","none");
+          $("#building").css("display","none");
+          $("#other").css("display","none");
+        }
+      });
+    });
+    function RedirectaddAddress() {
+        $("#prevAddress").addClass("d-none");
+        $("#addAddress").removeClass("d-none");
+        $("#prevAddressbtn").prop("checked", false);
+    }
+    function RedirectprevAddress() {
+        $("#addAddress").addClass("d-none");
+        $("#addAddressbtn").prop("checked", false);
     }

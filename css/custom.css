@@ -250,6 +250,10 @@ footer.light-layout{
     border: 2px solid #4e0000;
     color: #4e0000;
 }
+.order-histry-area .order-history .profile-form form ul.pro-input-label li select{
+    border: 2px solid #4e0000;
+    color: #4e0000;
+}
 .order-histry-area .order-history .profile{
     border: 2px solid #4e0000;
     /* width: 100% !important; */
@@ -266,4 +270,10 @@ footer.light-layout{
 }
 .form-check-input[type=radio]{
     padding: 7px;
+}
+.form-check-input:checked[type=radio]{
+    background-color: #4e0000;
+}
+.form-check-input:focus[type=radio]{
+    background-color: #4e0000;
 }

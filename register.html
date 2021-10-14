@@ -158,7 +158,12 @@
                             <div class="cart-pro-info">
                                 <div class="cart-qty-price">
                                     <span class="quantity">1 x </span>
-                                    <span class="price-box">140 LE
+                                    <span class="price-box">140 LE </span>
+                                </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
                                     </span>
                                 </div>
                                 <div class="delete-item-cart">
@@ -182,6 +187,12 @@
                                     <span class="price-box">15 LE
                                     </span>
                                 </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
+                                </div>
                                 <div class="delete-item-cart">
                                     <a href="empty-cart.html"><i class="icon-trash icons"></i></a>
                                 </div>
@@ -201,6 +212,12 @@
                                 <div class="cart-qty-price">
                                     <span class="quantity">1 x </span>
                                     <span class="price-box">220 LE</span>
+                                </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
                                 </div>
                                 <div class="delete-item-cart">
                                     <a href="empty-cart.html"><i class="icon-trash icons"></i></a>
@@ -309,31 +326,62 @@
                         <div class="register-box">
                             <h1>Create account</h1>
                             <p>Please register below account detail</p>
-                            <form action="login.html">
+                            <form id="registerForm" action="">
                                 <div class="row">
                                     <div class="col-lg-6">
-                                        <input type="text" name="full_name" placeholder="Full Name" required>
+                                        <div class="form-group form-control-validation">
 
+                                            <input type="text" id="full_name" name="full_name" placeholder="Full Name">
+                                            <small></small>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="email" name="email" placeholder="Email" required>
+                                        <div class="form-group form-control-validation">
 
+                                            <input type="email" id="email" name="email" placeholder="Email">
+                                            <small></small>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="number" id="phone" name="phone" placeholder="Phone" required>
+                                        <div class="form-group form-control-validation">
 
+                                            <input type="number" id="phone" name="phone" placeholder="Phone">
+                                            <small></small>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="text" id="address" name="address" placeholder="Address" required>
+                                        <div class="form-group form-control-validation">
 
+                                            <input type="text" id="address" name="address" placeholder="Address">
+                                            <small></small>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group form-control-validation">
+                                        <select name="location_id" class="form-control" id="location_id">
+                                            <option value="">Select a location</option>
+                                            <option value="Null">Null</option>
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                        </select>
+
+                                        <small>Error message</small>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="password" name="password" placeholder="Password" required>
+                                        <div class="form-group form-control-validation">
 
+                                            <input type="password" id="password" name="password" placeholder="Password">
+                                            <small></small>
+                                        </div>
                                     </div>
                                     <div class="col-lg-6">
-                                        <input type="password" name="c_password" placeholder="Confirm Password" required>
+                                        <div class="form-group form-control-validation">
 
+                                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
+                                            <small></small>
+                                        </div>
                                     </div>
                                     <div class="col-12 ">
                                         <div class="row justify-content-center">
@@ -448,6 +496,120 @@
         <script src="js/swiper.min.js"></script>
         <!-- custom -->
         <script src="js/custom.js"></script>
+        <script>
+            let registerForm = document.getElementById('registerForm');
+            let fullName = document.getElementById('full_name');
+            let phone = document.getElementById('phone');
+            let address = document.getElementById('address');
+            let locationId = document.getElementById('location_id');
+            let email = document.getElementById('email');
+            let password = document.getElementById('password');
+            let confirmPassword = document.getElementById('password_confirmation');
+    
+    
+    
+            let formErrors = [];
+    
+            registerForm.addEventListener('submit', e => {
+                checkInputs();
+                if (formErrors.length) {
+                    e.preventDefault();
+                }
+            });
+    
+            function checkInputs() {
+                formErrors = [];
+                // trim to remove the whitespaces
+    
+                let fullNameValue = fullName.value.trim();
+                let phoneValue = phone.value.trim();
+                let addressValue = address.value.trim();
+                let locationIdValue = locationId.value.trim();
+                let emailValue = email.value.trim();
+                let passwordValue = password.value.trim();
+                let confirmPasswordValue = confirmPassword.value.trim();
+    
+    
+    
+                if (fullNameValue === '') {
+                    formErrors.push('Full Name is required');
+                    setErrorFor(fullName, 'Full Name is required');
+                } else {
+                    setSuccessFor(fullName);
+                }
+                if (phoneValue === '') {
+                    formErrors.push('Phone is required');
+                    setErrorFor(phone, 'Phone is required');
+                } else {
+                    setSuccessFor(phone);
+                }
+                if (locationIdValue === '') {
+                    formErrors.push('Location is required');
+                    setErrorFor(locationId, 'Location is required');
+                } else {
+                    setSuccessFor(locationId);
+                }
+                if (addressValue === '') {
+                    formErrors.push('Address is required');
+                    setErrorFor(address, 'Address is required');
+                } else {
+                    setSuccessFor(address);
+                }
+    
+    
+    
+                if (emailValue === '') {
+                    formErrors.push('Email is required');
+                    setErrorFor(email, 'Email is required');
+                } else if (!isEmail(emailValue)) {
+                    formErrors.push('Email is invalid');
+                    setErrorFor(email, 'Email is invalid');
+                } else {
+                    setSuccessFor(email);
+                }
+                if (passwordValue === '') {
+                    formErrors.push('Password is required');
+                    setErrorFor(password, 'Password is required');
+                } else if (passwordValue.length < 8) {
+                    formErrors.push('Password cannot be less than 8');
+                    setErrorFor(password, 'Password cannot be less than 8');
+                } else {
+                    setSuccessFor(password);
+                }
+                if (confirmPasswordValue === '') {
+                    formErrors.push('Password confirmation is required');
+                    setErrorFor(confirmPassword, 'Password confirmation is required');
+                } else if (passwordValue !== confirmPasswordValue) {
+                    formErrors.push("Password don't match ");
+                    setErrorFor(confirmPassword, "Password don't match");
+                } else {
+                    setSuccessFor(confirmPassword);
+                }
+            }
+    
+            function setErrorFor(input, message) {
+                let formControl = input.parentElement;
+                let small = formControl.querySelector('small');
+                formControl.className = 'form-group form-control-validation error';
+                small.innerText = message;
+            }
+    
+            function setSuccessFor(input) {
+                let formControl = input.parentElement;
+                formControl.className = 'form-group  form-control-validation success';
+            }
+    
+            function isEmail(email) {
+                return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+            }
+            function openSearch() {
+                document.getElementById("search-overlay").style.display = "block";
+            }
+    
+            function closeSearch() {
+                document.getElementById("search-overlay").style.display = "none";
+            }
+        </script>
     </body>
 
 <!-- Mirrored from spacingtech.com/html/vegist-final/vegist/register.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Sep 2021 09:12:48 GMT -->

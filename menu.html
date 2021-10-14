@@ -158,7 +158,12 @@
                             <div class="cart-pro-info">
                                 <div class="cart-qty-price">
                                     <span class="quantity">1 x </span>
-                                    <span class="price-box">140 LE
+                                    <span class="price-box">140 LE </span>
+                                </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
                                     </span>
                                 </div>
                                 <div class="delete-item-cart">
@@ -182,6 +187,12 @@
                                     <span class="price-box">15 LE
                                     </span>
                                 </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
+                                </div>
                                 <div class="delete-item-cart">
                                     <a href="empty-cart.html"><i class="icon-trash icons"></i></a>
                                 </div>
@@ -201,6 +212,12 @@
                                 <div class="cart-qty-price">
                                     <span class="quantity">1 x </span>
                                     <span class="price-box">220 LE</span>
+                                </div>
+                                <div class="plus-minus mt-0">
+                                    <span>
+                                        <a href="javascript:void(0)" class="minus-btn text-black">-</a>
+                                        <a href="javascript:void(0)" class="plus-btn text-black">+</a>
+                                    </span>
                                 </div>
                                 <div class="delete-item-cart">
                                     <a href="empty-cart.html"><i class="icon-trash icons"></i></a>
@@ -310,28 +327,28 @@
                                 <a href="#category-filter" data-bs-toggle="collapse" class="filter-link"><span>Categories </span><i class="fa fa-angle-down"></i></a>
                                 <ul class="all-option collapse" id="category-filter">
                                     <li class="grid-list-option">
-                                        <input type="radio" name="category">
-                                        <a href="javascript:void(0)">Variety Platters
-                                            <span class="grid-items">(7)</span></a>
+                                        <input type="radio" name="category" id="Variety">
+                                        <a href="javascript:void(0)" ><label for="Variety">Variety Platters
+                                            <span class="grid-items">(7)</span></label></a>
                                     </li>
                                     <li class="grid-list-option">
-                                        <input type="radio" name="category">
-                                        <a href="javascript:void(0)">Soups<span class="grid-items">(5)</span></a>
+                                        <input type="radio" name="category" id="Soups">
+                                        <a href="javascript:void(0)"><label for="Soups">Soups<span class="grid-items">(5)</span></label></a>
                                     </li>
                                     <li class="grid-list-option">
-                                        <input type="radio" name="category">
-                                        <a href="javascript:void(0)">Main Platters
-                                            <span class="grid-items">(10)</span></a>
+                                        <input type="radio" name="category" id="main_platters">
+                                        <a href="javascript:void(0)"><label for="main_platters">Main Platters
+                                            <span class="grid-items">(10)</span></label></a>
                                     </li>
                                     <li class="grid-list-option">
-                                        <input type="radio" name="category">
-                                        <a href="javascript:void(0)">Grilled Chicken
-                                            <span class="grid-items">(15)</span></a>
+                                        <input type="radio" name="category" id="chicken">
+                                        <a href="javascript:void(0)"><label for="chicken">Grilled Chicken
+                                            <span class="grid-items">(15)</span></label></a>
                                     </li>
                                     <li class="grid-list-option">
-                                        <input type="radio" name="category">
-                                        <a href="javascript:void(0)">Meat Corner
-                                            <span class="grid-items">(19)</span></a>
+                                        <input type="radio" name="category" id="meat_corner">
+                                        <a href="javascript:void(0)"><label for="meat_corner">Meat Corner
+                                            <span class="grid-items">(19)</span></label></a>
                                     </li>
                                     
                                 </ul>
@@ -344,10 +361,9 @@
                         <div class="grid-list-area">
                             <div class="grid-list-select border-bottom pb-3">
                                 <h4>Menu</h4>
-                                
+                                <input type="text" class="form-control w-200" placeholder="Search ...">
                                 <ul class="grid-list-selector">
                                     <li>
-                                        <label>Sort by</label>
                                         <select>
                                             <option>Featured</option>
                                             <option>Best selling</option>
@@ -712,6 +728,7 @@
         <!-- owl carousal -->
         <script src="js/owl.carousel.min.js"></script>
         <!-- slick -->
+        <script src="js/wow.min.js"></script>
         <!-- swiper -->
         <script src="js/swiper.min.js"></script>
         <!-- custom -->
